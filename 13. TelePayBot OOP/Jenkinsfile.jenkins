@@ -2,8 +2,6 @@
 //  groovy Jenkinsfile
 properties([disableConcurrentBuilds()])
 
- 
-
 pipeline  {
     agent { 
         label 'master'
@@ -13,14 +11,14 @@ pipeline  {
         timestamps()
     }
     stages {
-        //stage("Create docker image") {
-        //    steps {
-        //        echo 'Creating docker image ...'
-        //        dir('.'){
+        stage("Create docker image") {
+            steps {
+                echo 'Creating docker image ...'
+                dir('.'){
         //            sh "docker build -t macnaer/react-contact-list . "
-        //        }
-        //    }
-        //}
+                }
+            }
+        }
         //stage("docker login") {
         //    steps {
         //        echo " ============== docker login =================="
@@ -71,8 +69,6 @@ pipeline  {
         //         '''
         //     }
         //}
-
- 
 
     }
 }
