@@ -1,0 +1,5 @@
+token = "1142079773:AAHLjpko8HY8f_IvIi3IrZAX6s88oJRacfg"
+host = "localhost"
+user = "root"
+passwd = ""
+database = ""
