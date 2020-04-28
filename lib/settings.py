@@ -1,5 +1,5 @@
 token = "1142079773:AAHLjpko8HY8f_IvIi3IrZAX6s88oJRacfg"
-host = "localhost"
+host = "13.68.188.25"
 user = "root"
-passwd = ""
+passwd = "2z3C5E5g"
 database = ""
