@@ -1,7 +1,7 @@
 import mysql.connector
 import requests
-if __name__ == "__main__":
-    db_manager
+# if __name__ == "__main__":
+#     db_manager
 
 
 class db_manager():
@@ -26,8 +26,8 @@ class db_manager():
         return response.json()
 
     def save_all_data(self, data):
-        self.__cursor.execute("CREATE DATABASE IF NOT EXISTS COVID_19;")
-        self.__cursor.execute("USE COVID_19;")
+        self.__cursor.execute("CREATE DATABASE IF NOT EXISTS COVID_vlad;")
+        self.__cursor.execute("USE COVID_vlad;")
         self.__cursor.execute(
             "CREATE TABLE IF NOT EXISTS CORON (id INT AUTO_INCREMENT PRIMARY KEY, Country VARCHAR(255), "
             "Slug VARCHAR(255), NewConfirmed INT(10), TotalConfirmed INT(10),NewDeaths INT(10),TotalDeaths INT(10), "
@@ -53,7 +53,7 @@ class db_manager():
             print(self.__cursor.rowcount, "Coron added")
 
     def show_add_data(self):
-        self.__cursor.execute("USE COVID_19;")
+        self.__cursor.execute("USE COVID_vlad;")
         self.__cursor.execute(
             "SELECT * FROM CORON ORDER BY TotalConfirmed DESC")
         coron = self.__cursor.fetchall()
@@ -72,14 +72,14 @@ class db_manager():
               "\nЗагальна кількість вилікуваних ➤", recov_all)
 
     def show_country(self, countr):
-        self.__cursor.execute("USE COVID_19;")
+        self.__cursor.execute("USE COVID_vlad;")
         self.__cursor.execute(
             "SELECT * FROM CORON WHERE Country = '" + countr + "' OR Country LIKE '"+countr+"%'")
         coron = self.__cursor.fetchall()
         return coron
 
     def update_stat(self):
-        self.__cursor.execute("USE COVID_19;")
+        self.__cursor.execute("USE COVID_vlad;")
         sql = ("DELETE FROM CORON")
         self.__cursor.execute(sql)
         self.__db.commit()
