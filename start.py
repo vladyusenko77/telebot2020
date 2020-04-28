@@ -30,4 +30,4 @@ def get_text_messages(message):
 if __name__ == "__main__":
     print("[" + str(datetime.now()) + "] Running...")
     bot.infinity_polling(True)
-# start.puu
+# start.p
