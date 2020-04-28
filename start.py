@@ -8,7 +8,7 @@ __URL = "https://api.covid19api.com/summary"
 db_object = db_manager(host, user, passwd, database, __URL)
 covid_19_data = db_object.get_all_data()
 bot = telebot.TeleBot(token)
-db_object.save_all_data(covid_19_data)
+# docdb_object.save_all_data(covid_19_data)
 
 
 @bot.message_handler(commands=['start', 'help'])
