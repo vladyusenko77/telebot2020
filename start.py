@@ -1,14 +1,13 @@
 from lib.db_manager import db_manager
 from lib.settings import *
 import telebot
-#import config
 from datetime import datetime
 
 __URL = "https://api.covid19api.com/summary"
-db_object = db_manager(host, user, passwd, database, __URL)
+db_object = db_manager(host, user, passwd, __URL)
 covid_19_data = db_object.get_all_data()
 bot = telebot.TeleBot(token)
-# docdb_object.save_all_data(covid_19_data)
+# db_object.save_all_data(covid_19_data)
 
 
 @bot.message_handler(commands=['start', 'help'])
