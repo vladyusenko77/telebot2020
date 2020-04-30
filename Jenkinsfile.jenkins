@@ -1,7 +1,6 @@
 #!groovy
 //  groovy Jenkinsfile
 properties([disableConcurrentBuilds()])
-
 pipeline  {
     agent { 
         label 'master'
@@ -37,14 +36,14 @@ pipeline  {
                '''
            }
         }
-        //stage("docker stop") {
-        //    steps {
-        //        echo " ============== stoping all images =================="
-        //        sh '''
-        //        docker stop chatterbox
-        //        '''
-        //    }
-        //} 
+        stage("docker stop") {
+           steps {
+               echo " ============== stoping all images =================="
+               sh '''
+               docker stop telebot_remote
+               '''
+           }
+        } 
         //stage("docker remove") {
         //    steps {
         //        echo " ============== removing all docker containers =================="
