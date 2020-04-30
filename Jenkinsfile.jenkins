@@ -1,5 +1,7 @@
 #!groovy
 //  groovy Jenkinsfile
+
+
 properties([disableConcurrentBuilds()])
 pipeline  {
     agent { 
@@ -49,6 +51,14 @@ pipeline  {
                echo " ============== removing all docker containers =================="
                sh '''
                docker rm telebot_remote
+               '''
+           }
+        } 
+        stage("docker remove images") {
+           steps {
+               echo " ============== removing all docker images =================="
+               sh '''
+               docker rmi yusenko/yusenko.r.v -f
                '''
            }
         }
