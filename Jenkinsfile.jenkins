@@ -58,7 +58,7 @@ pipeline  {
            steps {
                echo " ============== removing all docker images =================="
                sh '''
-               docker rmi yusenko/yusenko.r.v -f
+               docker rmi $(docker images -q)
                '''
            }
         }
